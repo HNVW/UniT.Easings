@@ -1,5 +1,6 @@
 {
   "name": "UniT.Easings",
+  "overrideReferences": true,
   "references": [
     "UniT.Extensions",
     "UniTask"

@@ -1,5 +1,6 @@
 {
   "name": "UniT.Easings.UI",
+  "overrideReferences": true,
   "references": [
     "UniT.Easings",
     "UniT.Extensions.UI",
