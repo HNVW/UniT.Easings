@@ -16,26 +16,26 @@ namespace UniT.Easings
         {
             private struct Data
             {
-                public readonly Action<float>           action;
-                public readonly float                   duration;
-                public readonly Function                easing;
-                public readonly Timer                   timer;
-                public readonly Timing                  timing;
-                public readonly CancellationToken       cancellationToken;
+                public readonly Action<float> action;
+                public readonly float duration;
+                public readonly Function easing;
+                public readonly Timer timer;
+                public readonly Timing timing;
+                public readonly CancellationToken cancellationToken;
                 public readonly UniTaskCompletionSource completionSource;
 
                 public float time;
 
                 public Data(Action<float> action, float duration, Function easing, Timer timer, Timing timing, CancellationToken cancellationToken, UniTaskCompletionSource completionSource)
                 {
-                    this.action            = action;
-                    this.duration          = duration;
-                    this.easing            = easing;
-                    this.timer             = timer;
-                    this.timing            = timing;
+                    this.action = action;
+                    this.duration = duration;
+                    this.easing = easing;
+                    this.timer = timer;
+                    this.timing = timing;
                     this.cancellationToken = cancellationToken;
-                    this.completionSource  = completionSource;
-                    this.time              = 0;
+                    this.completionSource = completionSource;
+                    this.time = 0;
                 }
             }
 
@@ -94,13 +94,13 @@ namespace UniT.Easings
             }
         }
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         private static UpdaterMono? updater;
 
         private static UpdaterMono Updater => updater = updater.NullIfDestroyed() ?? new GameObject(nameof(Easing)).AddComponent<UpdaterMono>().DontDestroyOnLoad();
-        #else
+#else
         private static readonly UpdaterMono Updater = new GameObject(nameof(Easing)).AddComponent<UpdaterMono>().DontDestroyOnLoad();
-        #endif
+#endif
 
         public static UniTask Apply(Action<float> action, float duration, Function? easing = null, Timer? timer = null, Timing timing = Timing.Update, CancellationToken cancellationToken = default)
         {
@@ -110,7 +110,7 @@ namespace UniT.Easings
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask Apply(Action<float> action, float begin, float end, float duration, Function? easing = null, Timer? timer = null, Timing timing = Timing.Update, CancellationToken cancellationToken = default)
         {
-            var diff    = end - begin;
+            var diff = end - begin;
             var wrapper = new Action<float>(value => action(begin + diff * value));
             return Apply(wrapper, duration, easing, timer, timing, cancellationToken);
         }
@@ -132,7 +132,7 @@ namespace UniT.Easings
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask Apply(Action<Vector3> action, Vector3 begin, Vector3 end, float duration, Function? easing = null, Timer? timer = null, Timing timing = Timing.Update, CancellationToken cancellationToken = default)
         {
-            var diff    = end - begin;
+            var diff = end - begin;
             var wrapper = new Action<float>(value => action(begin + diff * value));
             return Apply(wrapper, duration, easing, timer, timing, cancellationToken);
         }
@@ -140,7 +140,7 @@ namespace UniT.Easings
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask Apply(Action<Color> action, Color begin, Color end, float duration, Function? easing = null, Timer? timer = null, Timing timing = Timing.Update, CancellationToken cancellationToken = default)
         {
-            var diff    = end - begin;
+            var diff = end - begin;
             var wrapper = new Action<float>(value => action(begin + diff * value));
             return Apply(wrapper, duration, easing, timer, timing, cancellationToken);
         }

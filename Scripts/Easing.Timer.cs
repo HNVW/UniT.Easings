@@ -7,13 +7,13 @@ namespace UniT.Easings
     {
         public delegate float Timer();
 
-        public static readonly Timer DeltaTime = () => Time.deltaTime;
+        public static readonly Timer DeltaTime = static () => Time.deltaTime;
 
-        public static readonly Timer UnscaledDeltaTime = () => Time.unscaledDeltaTime;
+        public static readonly Timer UnscaledDeltaTime = static () => Time.unscaledDeltaTime;
 
-        public static readonly Timer FixedDeltaTime = () => Time.fixedDeltaTime;
+        public static readonly Timer FixedDeltaTime = static () => Time.fixedDeltaTime;
 
-        public static readonly Timer FixedUnscaledDeltaTime = () => Time.fixedUnscaledDeltaTime;
+        public static readonly Timer FixedUnscaledDeltaTime = static () => Time.fixedUnscaledDeltaTime;
 
         public static Timer DefaultTimer { get; set; } = DeltaTime;
     }
