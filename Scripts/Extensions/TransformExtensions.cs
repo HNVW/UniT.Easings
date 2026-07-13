@@ -5,7 +5,7 @@ namespace UniT.Easings
     using System.Runtime.CompilerServices;
     using System.Threading;
     using Cysharp.Threading.Tasks;
-    using UniT.Extensions;
+    using Extensions;
     using UnityEngine;
 
     public static class TransformExtensions

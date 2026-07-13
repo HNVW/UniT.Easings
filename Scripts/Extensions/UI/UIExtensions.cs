@@ -5,8 +5,8 @@ namespace UniT.Easings
     using System.Runtime.CompilerServices;
     using System.Threading;
     using Cysharp.Threading.Tasks;
+    using Extensions;
     using TMPro;
-    using UniT.Extensions;
     using UnityEngine;
     using UnityEngine.UI;
 
