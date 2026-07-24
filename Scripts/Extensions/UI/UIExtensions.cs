@@ -27,13 +27,13 @@ namespace UniT.Easings
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask SlideInAsync(this Slider target, float duration, Easing.Function? function = null, Easing.Timer? timer = null, Easing.Timing timing = Easing.Timing.Update, CancellationToken cancellationToken = default)
         {
-            return target.SlideAsync(0, 1, duration, function, timer, timing, cancellationToken);
+            return target.SlideAsync(1, duration, function, timer, timing, cancellationToken);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask SlideOutAsync(this Slider target, float duration, Easing.Function? function = null, Easing.Timer? timer = null, Easing.Timing timing = Easing.Timing.Update, CancellationToken cancellationToken = default)
         {
-            return target.SlideAsync(1, 0, duration, function, timer, timing, cancellationToken);
+            return target.SlideAsync(0, duration, function, timer, timing, cancellationToken);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,13 +51,13 @@ namespace UniT.Easings
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask FillInAsync(this Image target, float duration, Easing.Function? function = null, Easing.Timer? timer = null, Easing.Timing timing = Easing.Timing.Update, CancellationToken cancellationToken = default)
         {
-            return target.FillAsync(0, 1, duration, function, timer, timing, cancellationToken);
+            return target.FillAsync(1, duration, function, timer, timing, cancellationToken);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask FillOutAsync(this Image target, float duration, Easing.Function? function = null, Easing.Timer? timer = null, Easing.Timing timing = Easing.Timing.Update, CancellationToken cancellationToken = default)
         {
-            return target.FillAsync(1, 0, duration, function, timer, timing, cancellationToken);
+            return target.FillAsync(0, duration, function, timer, timing, cancellationToken);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

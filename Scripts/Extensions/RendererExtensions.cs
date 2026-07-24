@@ -23,13 +23,13 @@ namespace UniT.Easings
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask BlendInAsync(this SkinnedMeshRenderer target, int index, float duration, Easing.Function? function = null, Easing.Timer? timer = null, Easing.Timing timing = Easing.Timing.Update, CancellationToken cancellationToken = default)
         {
-            return target.BlendAsync(index, 0, 100, duration, function, timer, timing, cancellationToken);
+            return target.BlendAsync(index, 100, duration, function, timer, timing, cancellationToken);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask BlendOutAsync(this SkinnedMeshRenderer target, int index, float duration, Easing.Function? function = null, Easing.Timer? timer = null, Easing.Timing timing = Easing.Timing.Update, CancellationToken cancellationToken = default)
         {
-            return target.BlendAsync(index, 100, 0, duration, function, timer, timing, cancellationToken);
+            return target.BlendAsync(index, 0, duration, function, timer, timing, cancellationToken);
         }
     }
 }

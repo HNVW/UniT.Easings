@@ -394,13 +394,13 @@ namespace UniT.Easings
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask LocalScaleInAsync(this Transform target, float duration, Easing.Function? function = null, Easing.Timer? timer = null, Easing.Timing timing = Easing.Timing.Update, CancellationToken cancellationToken = default)
         {
-            return target.LocalScaleAsync(0, 1, duration, function, timer, timing, cancellationToken);
+            return target.LocalScaleAsync(1, duration, function, timer, timing, cancellationToken);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask LocalScaleOutAsync(this Transform target, float duration, Easing.Function? function = null, Easing.Timer? timer = null, Easing.Timing timing = Easing.Timing.Update, CancellationToken cancellationToken = default)
         {
-            return target.LocalScaleAsync(1, 0, duration, function, timer, timing, cancellationToken);
+            return target.LocalScaleAsync(0, duration, function, timer, timing, cancellationToken);
         }
 
         #endregion
