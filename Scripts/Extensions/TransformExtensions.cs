@@ -178,7 +178,7 @@ namespace UniT.Easings
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask RotateAsync(this Transform target, Quaternion begin, Quaternion end, float duration, Easing.Function? function = null, Easing.Timer? timer = null, Easing.Timing timing = Easing.Timing.Update, CancellationToken cancellationToken = default)
         {
-            return target.RotateAsync(begin.eulerAngles, end.eulerAngles, duration, function, false, timer, timing, cancellationToken);
+            return target.RotateAsync(begin.eulerAngles, end.eulerAngles, duration, function, true, timer, timing, cancellationToken);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -248,7 +248,7 @@ namespace UniT.Easings
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask LocalRotateAsync(this Transform target, Quaternion begin, Quaternion end, float duration, Easing.Function? function = null, Easing.Timer? timer = null, Easing.Timing timing = Easing.Timing.Update, CancellationToken cancellationToken = default)
         {
-            return target.LocalRotateAsync(begin.eulerAngles, end.eulerAngles, duration, function, false, timer, timing, cancellationToken);
+            return target.LocalRotateAsync(begin.eulerAngles, end.eulerAngles, duration, function, true, timer, timing, cancellationToken);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

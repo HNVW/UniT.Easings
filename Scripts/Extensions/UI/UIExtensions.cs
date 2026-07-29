@@ -27,13 +27,13 @@ namespace UniT.Easings
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask SlideInAsync(this Slider target, float duration, Easing.Function? function = null, Easing.Timer? timer = null, Easing.Timing timing = Easing.Timing.Update, CancellationToken cancellationToken = default)
         {
-            return target.SlideAsync(1, duration, function, timer, timing, cancellationToken);
+            return target.SlideAsync(target.maxValue, duration, function, timer, timing, cancellationToken);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UniTask SlideOutAsync(this Slider target, float duration, Easing.Function? function = null, Easing.Timer? timer = null, Easing.Timing timing = Easing.Timing.Update, CancellationToken cancellationToken = default)
         {
-            return target.SlideAsync(0, duration, function, timer, timing, cancellationToken);
+            return target.SlideAsync(target.minValue, duration, function, timer, timing, cancellationToken);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
